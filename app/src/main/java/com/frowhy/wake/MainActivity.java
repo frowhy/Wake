@@ -153,6 +153,5 @@ public class MainActivity extends Activity {
 
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
-        System.exit(0);
     }
 }
