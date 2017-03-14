@@ -9,6 +9,13 @@
       ]
     },
     {
+      "schema": "mqqwpa://",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
       "schema": "taobao://",
       "package_name": [
         "com.taobao.taobao"

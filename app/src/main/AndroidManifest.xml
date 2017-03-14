@@ -12,6 +12,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <data android:scheme="mqq" />
+                <data android:scheme="mqqwpa" />
                 <data android:scheme="taobao" />
                 <data android:scheme="weixin" />
                 <data android:scheme="doubanradio" />
