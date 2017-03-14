@@ -1,0 +1,36 @@
+{
+  "schemas": [
+    {
+      "schema": "mqq://",
+      "package_name": [
+        "com.qzone",
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "schema": "taobao://",
+      "package_name": [
+        "com.taobao.taobao"
+      ]
+    },
+    {
+      "schema": "weixin://",
+      "package_name": [
+        "com.tencent.mm"
+      ]
+    },
+    {
+      "schema": "doubanradio://",
+      "package_name": [
+        "com.douban.radio"
+      ]
+    },
+    {
+      "schema": "zhihu://",
+      "package_name": [
+        "com.zhihu.android"
+      ]
+    }
+  ]
+}
