@@ -56,6 +56,13 @@
       "package_name": [
         "com.jingdong.app.mall"
       ]
+    },
+    {
+      "schema": "bilibili",
+      "package_name": [
+        "tv.danmaku.bili",
+        "com.bilibili.app.blue"
+      ]
     }
   ]
 }
