@@ -22,9 +22,9 @@ import java.util.List;
 import java.util.Set;
 
 public class MainActivity extends Activity {
+    private Gson gson = new Gson();
     private SharedPreferences mSp;
     private SharedPreferences.Editor mSpEditor;
-
     private PackageManager packageManager;
     private boolean checkRoot = false;
     private int count = 0;
@@ -58,6 +58,7 @@ public class MainActivity extends Activity {
         mSpEditor.apply();
 
         packageManager = getPackageManager();
+
         initSp();
         initSchema();
     }
@@ -71,25 +72,21 @@ public class MainActivity extends Activity {
 
     private void initSp() {
         int versionCode = mSp.getInt("version_code", 0);
+        int currentVersionCode = getVersionCode();
 
-        if (versionCode == 0 || versionCode < getVersionCode()) {
-
+        if (versionCode == 0 || versionCode < currentVersionCode) {
             String jsonStr = getLocalJson();
-
-            Gson gson = new Gson();
-
-            Schema schemas = gson.fromJson(jsonStr, Schema.class);
-
+            Schema schemas = gson.fromJson(String.valueOf(jsonStr), Schema.class);
             List<Schema.SchemasBean> schemasList = schemas.getSchemas();
-
             for (Schema.SchemasBean schema : schemasList) {
-                String schemaName = schema.getSchema();
-                List<String> packageNameList = schema.getPackage_name();
                 Set<String> set = new HashSet<>();
+                String schemaName = schema.getSchema();
+                List<String> packageNameList;
+                packageNameList = schema.getPackage_name();
                 set.addAll(packageNameList);
                 mSpEditor.putStringSet(schemaName, set);
             }
-
+            mSpEditor.putInt("version_code", currentVersionCode);
             mSpEditor.commit();
         }
     }
@@ -177,7 +174,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void startActivityWithUri(Uri uri){
+    private void startActivityWithUri(Uri uri) {
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
         finish();

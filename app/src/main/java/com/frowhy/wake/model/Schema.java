@@ -3,6 +3,7 @@ package com.frowhy.wake.model;
 import java.util.List;
 
 /**
+ * Wake
  * Created by frowhy on 2017/3/14.
  */
 
@@ -19,8 +20,8 @@ public class Schema {
 
     public static class SchemasBean {
         /**
-         * schema : mqq://
-         * package_name : ["com.qq.com","com.tencent.mobileqq"]
+         * schema : mqq
+         * package_name : ["com.qzone","com.tencent.mobileqq","com.tencent.tim"]
          */
 
         private String schema;
