@@ -20,6 +20,8 @@
                 <data android:scheme="alipay" />
                 <data android:scheme="youku" />
                 <data android:scheme="openapp.jdmoble" />
+                <data android:scheme="bilibili" />
+                <data android:scheme="acg.tv" />
 
                 <action android:name="android.intent.action.VIEW" />
 
