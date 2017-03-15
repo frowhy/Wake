@@ -1,6 +1,5 @@
 package com.frowhy.wake;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +9,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.view.View;
 import android.widget.Toast;
 
 import com.frowhy.wake.model.Schema;
@@ -26,9 +24,7 @@ import java.util.Set;
 public class MainActivity extends Activity {
     private SharedPreferences mSp;
     private SharedPreferences.Editor mSpEditor;
-    private String mSchema = "mqq://";
 
-    private View mBtnTest;
     private PackageManager packageManager;
     private boolean checkRoot = false;
     private int count = 0;
@@ -61,9 +57,8 @@ public class MainActivity extends Activity {
         mSpEditor = mSp.edit();
         mSpEditor.apply();
 
-        initView();
+        packageManager = getPackageManager();
         initSp();
-        initHandle();
         initSchema();
     }
 
@@ -96,8 +91,6 @@ public class MainActivity extends Activity {
             }
 
             mSpEditor.commit();
-        } else {
-            mSp.getStringSet(mSchema, new HashSet<String>());
         }
     }
 
@@ -124,22 +117,13 @@ public class MainActivity extends Activity {
         return versionCode;
     }
 
-    private void initView() {
-        mBtnTest = findViewById(R.id.btn_test);
-    }
-
     private void initHandle() {
         packageManager = getPackageManager();
-        mBtnTest.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("LongLogTag")
-            @Override
-            public void onClick(View v) {
-                handle(Uri.parse(mSchema));
-            }
-        });
     }
 
     private void handle(final Uri uri) {
+        String mSchema = uri.getScheme();
+
         /* 该Schema存在 */
         if (mSp.contains(mSchema)) {
 
@@ -159,6 +143,7 @@ public class MainActivity extends Activity {
                         if (!packageInfo.applicationInfo.enabled) {
                             count++;
                             checkRoot = 0 == execRootCmdSilent("pm enable " + packageName);
+                            Toast.makeText(this, "已唤醒[" + packageInfo.applicationInfo.loadLabel(packageManager).toString() + "]", Toast.LENGTH_SHORT).show();
                         }
                     } catch (PackageManager.NameNotFoundException ignored) {
                     }
@@ -172,7 +157,7 @@ public class MainActivity extends Activity {
                     finish();
                 } else {
                     if (checkRoot) {
-                        Toast.makeText(this, "已唤醒所需APP,正在打开,请等待...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "已唤醒所有APP,正在打开,请等待...", Toast.LENGTH_SHORT).show();
 
                         new Handler().postDelayed(new Runnable() {
                             public void run() {
