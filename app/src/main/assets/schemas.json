@@ -1,7 +1,7 @@
 {
   "schemas": [
     {
-      "schema": "mqq://",
+      "schema": "mqq",
       "package_name": [
         "com.qzone",
         "com.tencent.mobileqq",
@@ -9,34 +9,52 @@
       ]
     },
     {
-      "schema": "mqqwpa://",
+      "schema": "mqqwpa",
       "package_name": [
         "com.tencent.mobileqq",
         "com.tencent.tim"
       ]
     },
     {
-      "schema": "taobao://",
+      "schema": "taobao",
       "package_name": [
         "com.taobao.taobao"
       ]
     },
     {
-      "schema": "weixin://",
+      "schema": "weixin",
       "package_name": [
         "com.tencent.mm"
       ]
     },
     {
-      "schema": "doubanradio://",
+      "schema": "doubanradio",
       "package_name": [
         "com.douban.radio"
       ]
     },
     {
-      "schema": "zhihu://",
+      "schema": "zhihu",
       "package_name": [
         "com.zhihu.android"
+      ]
+    },
+    {
+      "schema": "alipay",
+      "package_name": [
+        "com.eg.android.AlipayGphone"
+      ]
+    },
+    {
+      "schema": "youku",
+      "package_name": [
+        "com.youku.phone"
+      ]
+    },
+    {
+      "schema": "openapp.jdmoble",
+      "package_name": [
+        "com.jingdong.app.mall"
       ]
     }
   ]

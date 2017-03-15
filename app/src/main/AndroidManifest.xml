@@ -17,6 +17,9 @@
                 <data android:scheme="weixin" />
                 <data android:scheme="doubanradio" />
                 <data android:scheme="zhihu" />
+                <data android:scheme="alipay" />
+                <data android:scheme="youku" />
+                <data android:scheme="openapp.jdmoble" />
 
                 <action android:name="android.intent.action.VIEW" />
 

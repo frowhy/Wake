@@ -117,10 +117,6 @@ public class MainActivity extends Activity {
         return versionCode;
     }
 
-    private void initHandle() {
-        packageManager = getPackageManager();
-    }
-
     private void handle(final Uri uri) {
         String mSchema = uri.getScheme();
 
@@ -152,9 +148,7 @@ public class MainActivity extends Activity {
                 if (count == 0) {
                     Toast.makeText(this, "所需APP未被冻结,重新打开,请勿选择唤醒", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                    startActivity(intent);
-                    finish();
+                    startActivityWithUri(uri);
                 } else {
                     if (checkRoot) {
                         Toast.makeText(this, "已唤醒所有APP,正在打开,请等待...", Toast.LENGTH_SHORT).show();
@@ -162,32 +156,30 @@ public class MainActivity extends Activity {
                         new Handler().postDelayed(new Runnable() {
                             public void run() {
 
-                                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                                startActivity(intent);
-                                finish();
+                                startActivityWithUri(uri);
                             }
                         }, 1000);
                     } else {
                         Toast.makeText(this, "未获取ROOT权限,重新打开,请唤醒并授权", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        startActivity(intent);
-                        finish();
+                        startActivityWithUri(uri);
                     }
                 }
             } else {
                 Toast.makeText(this, "未记录该APP,请反馈Schema以及PackageName", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-                finish();
+                startActivityWithUri(uri);
             }
         } else {
             Toast.makeText(this, "未记录该APP,请反馈Schema以及PackageName", Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
-            finish();
+            startActivityWithUri(uri);
         }
+    }
+
+    private void startActivityWithUri(Uri uri){
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+        finish();
     }
 }
