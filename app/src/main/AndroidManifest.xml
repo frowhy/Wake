@@ -20,7 +20,6 @@
                 <data android:scheme="youku" />
                 <data android:scheme="openapp.jdmoble" />
                 <data android:scheme="bilibili" />
-                <data android:scheme="acg.tv" />
 
                 <!--QQ空间-->
                 <data android:scheme="mqzone" />
