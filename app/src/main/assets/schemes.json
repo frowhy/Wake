@@ -192,6 +192,138 @@
       "package_name": [
         "com.qzone"
       ]
+    },
+    {
+      "scheme": "fireball",
+      "package_name": [
+        "com.google.android.apps.fireball"
+      ]
+    },
+    {
+      "scheme": "otpauth",
+      "package_name": [
+        "com.google.android.apps.authenticator2"
+      ]
+    },
+    {
+      "scheme": "gplus",
+      "package_name": [
+        "com.google.android.apps.plus"
+      ]
+    },
+    {
+      "scheme": "assistant-handoff",
+      "package_name": [
+        "com.google.android.googlequicksearchbox"
+      ]
+    },
+    {
+      "scheme": "assistant-settings",
+      "package_name": [
+        "com.google.android.googlequicksearchbox"
+      ]
+    },
+    {
+      "scheme": "app",
+      "package_name": [
+        "com.google.android.googlequicksearchbox"
+      ]
+    },
+    {
+      "scheme": "android-app",
+      "package_name": [
+        "com.google.android.googlequicksearchbox"
+      ]
+    },
+    {
+      "scheme": "inboxapp",
+      "package_name": [
+        "com.google.android.apps.inbox"
+      ]
+    },
+    {
+      "scheme": "gmail2from",
+      "package_name": [
+        "com.google.android.gm"
+      ]
+    },
+    {
+      "scheme": "feedback",
+      "package_name": [
+        "com.google.android.gm"
+      ]
+    },
+    {
+      "scheme": "googleplaymusic",
+      "package_name": [
+        "com.google.android.music"
+      ]
+    },
+    {
+      "scheme": "vnd.youtube",
+      "package_name": [
+        "com.google.android.youtube"
+      ]
+    },
+    {
+      "scheme": "vnd.youtube.launch",
+      "package_name": [
+        "com.google.android.youtube"
+      ]
+    },
+    {
+      "scheme": "google.maps.taxi",
+      "package_name": [
+        "com.google.android.apps.maps"
+      ]
+    },
+    {
+      "scheme": "googlemapstaxi",
+      "package_name": [
+        "com.google.android.apps.maps"
+      ]
+    },
+    {
+      "scheme": "peterparker",
+      "package_name": [
+        "com.google.android.apps.maps"
+      ]
+    },
+    {
+      "scheme": "geo.replay",
+      "package_name": [
+        "com.google.android.apps.maps"
+      ]
+    },
+    {
+      "scheme": "google.navigation",
+      "package_name": [
+        "com.google.android.apps.maps"
+      ]
+    },
+    {
+      "scheme": "google.maps",
+      "package_name": [
+        "com.google.android.apps.maps"
+      ]
+    },
+    {
+      "scheme": "google.streetview",
+      "package_name": [
+        "com.google.android.apps.maps"
+      ]
+    },
+    {
+      "scheme": "geo",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "scheme": "googletranslate",
+      "package_name": [
+        "com.google.android.apps.translate"
+      ]
     }
   ]
 }

@@ -55,6 +55,51 @@
                 <!--百度云-->
                 <data android:scheme="baiduyun" />
 
+                <!--fireball-->
+                <data android:scheme="fireball" />
+
+                <!--otpAuth-->
+                <data android:scheme="otpauth" />
+
+                <!--GPlus-->
+                <data android:scheme="gplus" />
+
+                <!--Google-->
+                <data android:scheme="assistant-handoff" />
+                <data android:scheme="assistant-settings" />
+                <data android:scheme="app" />
+                <data android:scheme="android-app" />
+
+                <!--InboxApp-->
+                <data android:scheme="indexapp" />
+
+                <!--Gmail-->
+                <data android:scheme="gmail2from" />
+                <data android:scheme="feedback" />
+
+                <!--GooglePlayMusic-->
+                <data android:scheme="googleplaymusic" />
+
+                <!--youtube-->
+                <data android:scheme="vnd.youtube" />
+                <data android:scheme="vnd.youtube.launch" />
+
+                <!--GoogleMaps-->
+                <data android:scheme="google.maps.taxi" />
+                <data android:scheme="googlemapstaxi" />
+                <data android:scheme="peterparker" />
+                <data android:scheme="geo.replay" />
+                <data android:scheme="google.navigation" />
+                <data android:scheme="google.maps" />
+                <data android:scheme="google.streetview" />
+                <data android:scheme="google.maps.timeline" />
+
+                <!--GoogleEarth,GoogleMaps-->
+                <data android:scheme="geo" />
+
+                <!--GoogleTranslate-->
+                <data android:scheme="googletranslate" />
+
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
