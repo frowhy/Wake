@@ -464,25 +464,25 @@
     {
       "scheme": "qdreader",
       "package_name": [
-        "com.qidian.QDReader"
+        "com.qidian.QDReader", "com.qidian.QDReader.g", "com.qidian.QDReaderMM"
       ]
     },
     {
       "scheme": "QDreader",
       "package_name": [
-        "com.qidian.QDReader"
+        "com.qidian.QDReader", "com.qidian.QDReader.g", "com.qidian.QDReaderMM"
       ]
     },
     {
       "scheme": "tencentcom.qidian.QDReader",
       "package_name": [
-        "com.qidian.QDReader"
+        "com.qidian.QDReader", "com.qidian.QDReader.g"
       ]
     },
     {
       "scheme": "qwalletcom.qidian.QDReader",
       "package_name": [
-        "com.qidian.QDReader"
+        "com.qidian.QDReader", "com.qidian.QDReader.g"
       ]
     },
     {
