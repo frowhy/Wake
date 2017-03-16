@@ -316,7 +316,7 @@
     {
       "scheme": "geo",
       "package_name": [
-        "com.qzone"
+        "com.google.earth", "com.google.android.apps.maps"
       ]
     },
     {
