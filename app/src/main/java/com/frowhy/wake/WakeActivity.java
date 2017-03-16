@@ -2,10 +2,12 @@ package com.frowhy.wake;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.Bitmap;
@@ -14,7 +16,6 @@ import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 
@@ -30,13 +31,13 @@ import java.util.List;
 import java.util.Set;
 
 public class WakeActivity extends Activity {
+    private PackageManager packageManager;
     private Gson gson = new Gson();
     private SharedPreferences mSp;
     private SharedPreferences.Editor mSpEditor;
-    private PackageManager packageManager;
     private boolean checkRoot = false;
 
-    protected int execRootCmdSilent(String paramString) {
+    public static int execRootCmdSilent(String paramString) {
         try {
             Process localProcess = Runtime.getRuntime().exec("su");
             Object localObject = localProcess.getOutputStream();
@@ -53,6 +54,16 @@ public class WakeActivity extends Activity {
         } catch (Exception ignored) {
             return -1;
         }
+    }
+
+    public static int getVersionCode(PackageManager packageManager, String packageName) {
+        int versionCode = 0;
+        try {
+            PackageInfo packageInfo = packageManager.getPackageInfo(packageName, 0);
+            versionCode = packageInfo.versionCode;
+        } catch (PackageManager.NameNotFoundException ignored) {
+        }
+        return versionCode;
     }
 
     @Override
@@ -73,13 +84,44 @@ public class WakeActivity extends Activity {
     private void initSchema() {
         Uri uri = getIntent().getData();
         if (uri != null) {
-            handle(uri);
+            List<ResolveInfo> activities = packageManager.queryIntentActivities(new Intent(Intent.ACTION_VIEW, uri), 0);
+            boolean isValid = activities.size() > 1;
+
+            if (!isValid && mSp.getInt("handleCount", 0) < 1) {
+                handle(uri);
+            } else {
+                if (uri.getHost().equals("") && uri.getPath().equals("")) {
+                    if (activities.size() > 1) {
+                        ResolveInfo resolveInfo = activities.get(activities.size() - 1);
+                        startActivity(new Intent(packageManager.getLaunchIntentForPackage(resolveInfo.activityInfo.packageName)));
+                    } else {
+                        Toast.makeText(this, "不能启动", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    ResolveInfo resolveInfo = activities.get(activities.size() - 1);
+                    if (mSp.getString("prevActivity", "").equals(resolveInfo.activityInfo.name)) {
+                        mSpEditor.putString("prevActivity", "");
+                        mSpEditor.commit();
+                        Intent intent = new Intent().setComponent(new ComponentName(resolveInfo.activityInfo.packageName, resolveInfo.activityInfo.name));
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.setData(uri);
+                        startActivity(intent);
+                    } else {
+                        handle(uri);
+                        mSpEditor.putString("prevActivity", resolveInfo.activityInfo.name);
+                        mSpEditor.commit();
+                    }
+                }
+                mSpEditor.putInt("handleCount", 0);
+                mSpEditor.commit();
+                finish();
+            }
         }
     }
 
     private void initSp() {
         int versionCode = mSp.getInt("version_code", 0);
-        int currentVersionCode = getVersionCode();
+        int currentVersionCode = getVersionCode(packageManager, getPackageName());
 
         if (versionCode == 0 || versionCode < currentVersionCode) {
             String jsonStr = getLocalJson();
@@ -111,16 +153,6 @@ public class WakeActivity extends Activity {
         return resultString;
     }
 
-    private int getVersionCode() {
-        int versionCode = 0;
-        try {
-            PackageInfo packageInfo = packageManager.getPackageInfo(getPackageName(), 0);
-            versionCode = packageInfo.versionCode;
-        } catch (PackageManager.NameNotFoundException ignored) {
-        }
-        return versionCode;
-    }
-
     private void handle(final Uri uri) {
         String mSchema = uri.getScheme();
 
@@ -133,33 +165,21 @@ public class WakeActivity extends Activity {
                     checkRoot = 0 == execRootCmdSilent("pm enable " + mPackageName);
                 }
 
-                final Intent intent = packageManager.getLaunchIntentForPackage(mPackageName);
-
                 Toast.makeText(this, "已唤醒[" + packageInfo.applicationInfo.loadLabel(packageManager).toString() + "]", Toast.LENGTH_SHORT).show();
 
-                new Handler().postDelayed(new Runnable() {
-                    public void run() {
-                        startActivity(intent);
-                    }
-                }, 1000);
-
-                finish();
+                startActivityWithUri(uri);
             } catch (PackageManager.NameNotFoundException ignored) {
                 Toast.makeText(this, "唤醒失败", Toast.LENGTH_SHORT).show();
             }
         } else {
 
-        /* 该Schema存在 */
             if (mSp.contains(mSchema)) {
 
-            /* 取包名 */
                 Set<String> mPackageNames = mSp.getStringSet(mSchema, new HashSet<String>());
 
-            /* 如果包名不为空 */
                 if (!mPackageNames.isEmpty()) {
                     int count = 0;
 
-                /* 循环包名 */
                     for (String packageName : mPackageNames) {
 
                         PackageInfo packageInfo;
@@ -168,58 +188,59 @@ public class WakeActivity extends Activity {
                             if (!packageInfo.applicationInfo.enabled) {
                                 count += 1;
                                 checkRoot = 0 == execRootCmdSilent("pm enable " + packageName);
-
-                                String label = packageInfo.applicationInfo.loadLabel(packageManager).toString();
-                                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
-                                    BitmapDrawable icon = (BitmapDrawable) packageInfo.applicationInfo.loadIcon(packageManager);
-                                    createShortcut(label, packageName, icon.getBitmap(), new Intent(Intent.ACTION_VIEW, Uri.parse("wake://" + packageName)));
+                                if (checkRoot) {
+                                    mSpEditor.putBoolean("hasRoot", true);
+                                    mSpEditor.commit();
                                 }
 
-                                Toast.makeText(this, "已唤醒[" + label + "]", Toast.LENGTH_SHORT).show();
+                                if (checkRoot) {
+                                    String label = packageInfo.applicationInfo.loadLabel(packageManager).toString();
+                                    if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
+                                        BitmapDrawable icon = (BitmapDrawable) packageInfo.applicationInfo.loadIcon(packageManager);
+                                        createShortcut(label, packageName, icon.getBitmap(), new Intent(Intent.ACTION_VIEW, Uri.parse("wake://" + packageName)));
+                                    }
+
+                                    Toast.makeText(this, "已解冻[" + label + "]", Toast.LENGTH_SHORT).show();
+                                }
                             }
                         } catch (PackageManager.NameNotFoundException ignored) {
                         }
                     }
 
                     if (count == 0) {
-                        Toast.makeText(this, "所需APP未被冻结,重新打开,请勿选择唤醒", Toast.LENGTH_SHORT).show();
-
-                        finish();
-                    } else {
-                        if (checkRoot) {
-                            Toast.makeText(this, "已唤醒所有APP,正在打开,请等待...", Toast.LENGTH_SHORT).show();
-
-                            new Handler().postDelayed(new Runnable() {
-                                public void run() {
-                                    startActivityWithUri(uri, false);
-                                }
-                            }, 1000);
-                            finish();
-                        } else {
-                            Toast.makeText(this, "未获取ROOT权限,重新打开,请唤醒并授权", Toast.LENGTH_SHORT).show();
-
-                            startActivityWithUri(uri, true);
+                        if (mSp.getInt("handleCount", 0) < 1) {
+                            Toast.makeText(this, "所需APP未被冻结,请勿选择唤醒", Toast.LENGTH_SHORT).show();
                         }
+
+                        mSpEditor.putInt("handleCount", mSp.getInt("handleCount", 0) + 1);
+                        mSpEditor.commit();
+                        startActivityWithUri(uri);
+                    } else {
+                        if (!checkRoot) {
+                            Toast.makeText(this, "未获取ROOT权限", Toast.LENGTH_SHORT).show();
+                        }
+
+                        mSpEditor.putInt("handleCount", mSp.getInt("handleCount", 0) + 1);
+                        mSpEditor.commit();
+                        startActivityWithUri(uri);
                     }
                 } else {
                     Toast.makeText(this, "未记录该APP,请反馈Schema以及PackageName", Toast.LENGTH_SHORT).show();
 
-                    startActivityWithUri(uri, true);
+                    startActivityWithUri(uri);
                 }
             } else {
                 Toast.makeText(this, "未记录该APP,请反馈Schema以及PackageName", Toast.LENGTH_SHORT).show();
 
-                startActivityWithUri(uri, true);
+                startActivityWithUri(uri);
             }
         }
     }
 
-    private void startActivityWithUri(Uri uri, boolean isFinish) {
+    private void startActivityWithUri(Uri uri) {
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
-        if (isFinish) {
-            finish();
-        }
+        finish();
     }
 
     @TargetApi(Build.VERSION_CODES.N_MR1)

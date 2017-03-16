@@ -72,6 +72,126 @@
         "com.bilibili.app.blue",
         "com.bilibili.tv"
       ]
+    },
+    {
+      "schema": "mqzone",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "mqzonev2",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "mqzonev3",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "mqzonex",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "mqzonewx",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "mqzoneqq",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "qqpassport",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "openApp.jdMobile",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "openapp.jdmobile",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "jingdong",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "tmall",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "itmall",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "douban",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "tbmaintab",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "invoke_frs",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "tbfrs",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "tbphotolive",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "tbpb",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "tieba_sign",
+      "package_name": [
+        "com.qzone"
+      ]
+    },
+    {
+      "schema": "baiduyun",
+      "package_name": [
+        "com.qzone"
+      ]
     }
   ]
 }

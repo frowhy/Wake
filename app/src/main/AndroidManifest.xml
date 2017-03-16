@@ -11,7 +11,6 @@
         <activity android:name=".WakeActivity">
             <intent-filter>
                 <data android:scheme="wake" />
-                <data android:scheme="mqq" />
                 <data android:scheme="mqqwpa" />
                 <data android:scheme="taobao" />
                 <data android:scheme="weixin" />
@@ -22,6 +21,39 @@
                 <data android:scheme="openapp.jdmoble" />
                 <data android:scheme="bilibili" />
                 <data android:scheme="acg.tv" />
+
+                <!--QQ空间-->
+                <data android:scheme="mqzone" />
+                <data android:scheme="mqzonev2" />
+                <data android:scheme="mqzonev3" />
+                <data android:scheme="mqzonex" />
+                <data android:scheme="mqq" />
+                <data android:scheme="mqzonewx" />
+                <data android:scheme="mqzoneqq" />
+                <data android:scheme="qqpassport" />
+
+                <!--京东-->
+                <data android:scheme="openApp.jdMobile" />
+                <data android:scheme="openapp.jdmobile" />
+                <data android:scheme="jingdong" />
+
+                <!--天猫-->
+                <data android:scheme="tmall" />
+                <data android:scheme="itmall" />
+
+                <!--豆瓣-->
+                <data android:scheme="douban" />
+
+                <!--百度贴吧-->
+                <data android:scheme="tbmaintab" />
+                <data android:scheme="invoke_frs" />
+                <data android:scheme="tbfrs" />
+                <data android:scheme="tbphotolive" />
+                <data android:scheme="tbpb" />
+                <data android:scheme="tieba_sign" />
+
+                <!--百度云-->
+                <data android:scheme="baiduyun" />
 
                 <action android:name="android.intent.action.VIEW" />
 
