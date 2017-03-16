@@ -2,4 +2,6 @@
     <string name="app_name">唤醒</string>
     <string name="frowhy_gmail_com">frowhy@gmail.com</string>
     <string name="summary">可以在需要的时候自动唤醒已被冻结的APP</string>
+    <string name="enabled">已启用</string>
+    <string name="disabled">已禁用</string>
 </resources>

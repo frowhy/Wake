@@ -32,4 +32,14 @@
         android:layout_marginTop="16dp"
         android:text="@string/summary" />
 
+    <ToggleButton
+        android:id="@+id/tb_enabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:checked="true"
+        android:textOff="@string/disabled"
+        android:textOn="@string/enabled" />
+
 </RelativeLayout>

@@ -69,7 +69,6 @@ public class WakeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         mSp = PreferenceManager.getDefaultSharedPreferences(this);
         mSpEditor = mSp.edit();
@@ -82,39 +81,43 @@ public class WakeActivity extends Activity {
     }
 
     private void initSchema() {
-        Uri uri = getIntent().getData();
-        if (uri != null) {
-            List<ResolveInfo> activities = packageManager.queryIntentActivities(new Intent(Intent.ACTION_VIEW, uri), 0);
-            boolean isValid = activities.size() > 1;
+        if (!mSp.getBoolean("Enabled", true)) {
+            finish();
+        } else {
+            Uri uri = getIntent().getData();
+            if (uri != null) {
+                List<ResolveInfo> activities = packageManager.queryIntentActivities(new Intent(Intent.ACTION_VIEW, uri), 0);
+                boolean isValid = activities.size() > 1;
 
-            if (!isValid && mSp.getInt("handleCount", 0) < 1) {
-                handle(uri);
-            } else {
-                if (uri.getHost().equals("") && uri.getPath().equals("")) {
-                    if (activities.size() > 1) {
-                        ResolveInfo resolveInfo = activities.get(activities.size() - 1);
-                        startActivity(new Intent(packageManager.getLaunchIntentForPackage(resolveInfo.activityInfo.packageName)));
-                    } else {
-                        Toast.makeText(this, "不能启动", Toast.LENGTH_SHORT).show();
-                    }
+                if (!isValid && mSp.getInt("handleCount", 0) < 1) {
+                    handle(uri);
                 } else {
-                    ResolveInfo resolveInfo = activities.get(activities.size() - 1);
-                    if (mSp.getString("prevActivity", "").equals(resolveInfo.activityInfo.name)) {
-                        mSpEditor.putString("prevActivity", "");
-                        mSpEditor.commit();
-                        Intent intent = new Intent().setComponent(new ComponentName(resolveInfo.activityInfo.packageName, resolveInfo.activityInfo.name));
-                        intent.setAction(Intent.ACTION_VIEW);
-                        intent.setData(uri);
-                        startActivity(intent);
+                    if (uri.getHost().equals("") && uri.getPath().equals("")) {
+                        if (activities.size() > 1) {
+                            ResolveInfo resolveInfo = activities.get(activities.size() - 1);
+                            startActivity(new Intent(packageManager.getLaunchIntentForPackage(resolveInfo.activityInfo.packageName)));
+                        } else {
+                            Toast.makeText(this, "不能启动", Toast.LENGTH_SHORT).show();
+                        }
                     } else {
-                        handle(uri);
-                        mSpEditor.putString("prevActivity", resolveInfo.activityInfo.name);
-                        mSpEditor.commit();
+                        ResolveInfo resolveInfo = activities.get(activities.size() - 1);
+                        if (mSp.getString("prevActivity", "").equals(resolveInfo.activityInfo.name)) {
+                            mSpEditor.putString("prevActivity", "");
+                            mSpEditor.commit();
+                            Intent intent = new Intent().setComponent(new ComponentName(resolveInfo.activityInfo.packageName, resolveInfo.activityInfo.name));
+                            intent.setAction(Intent.ACTION_VIEW);
+                            intent.setData(uri);
+                            startActivity(intent);
+                        } else {
+                            handle(uri);
+                            mSpEditor.putString("prevActivity", resolveInfo.activityInfo.name);
+                            mSpEditor.commit();
+                        }
                     }
+                    mSpEditor.putInt("handleCount", 0);
+                    mSpEditor.commit();
+                    finish();
                 }
-                mSpEditor.putInt("handleCount", 0);
-                mSpEditor.commit();
-                finish();
             }
         }
     }
