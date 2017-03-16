@@ -109,19 +109,19 @@
     {
       "scheme": "openApp.jdMobile",
       "package_name": [
-        "添加Fackbook,Tumblr,Vimeo,Telegram"
+        "com.jingdong.app.mall"
       ]
     },
     {
       "scheme": "openapp.jdmobile",
       "package_name": [
-        "添加Fackbook,Tumblr,Vimeo,Telegram"
+        "com.jingdong.app.mall"
       ]
     },
     {
       "scheme": "jingdong",
       "package_name": [
-        "添加Fackbook,Tumblr,Vimeo,Telegram"
+        "com.jingdong.app.mall"
       ]
     },
     {
@@ -181,7 +181,7 @@
     {
       "scheme": "baiduyun",
       "package_name": [
-        "com.baidu.netdisk"
+        "com.baidu.netdisk", "com.downloading.main.baiduyundownload"
       ]
     },
     {
