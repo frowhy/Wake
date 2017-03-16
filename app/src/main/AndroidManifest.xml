@@ -100,6 +100,15 @@
                 <!--GoogleTranslate-->
                 <data android:scheme="googletranslate" />
 
+                <!--GooglePlayGame-->
+                <data android:scheme="version" />
+
+                <!--Google报亭-->
+                <data android:scheme="currents" />
+                <data android:scheme="magazines" />
+                <data android:scheme="newsstand" />
+                <data android:scheme="google_newsstand_sponsored" />
+                
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
