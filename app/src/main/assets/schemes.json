@@ -61,16 +61,7 @@
       "scheme": "bilibili",
       "package_name": [
         "tv.danmaku.bili",
-        "com.bilibili.app.blue",
-        "com.bilibili.tv"
-      ]
-    },
-    {
-      "scheme": "acg.tv",
-      "package_name": [
-        "tv.danmaku.bili",
-        "com.bilibili.app.blue",
-        "com.bilibili.tv"
+        "com.bilibili.app.blue"
       ]
     },
     {
