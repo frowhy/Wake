@@ -118,79 +118,79 @@
     {
       "scheme": "openApp.jdMobile",
       "package_name": [
-        "com.qzone"
+        "添加Fackbook,Tumblr,Vimeo,Telegram"
       ]
     },
     {
       "scheme": "openapp.jdmobile",
       "package_name": [
-        "com.qzone"
+        "添加Fackbook,Tumblr,Vimeo,Telegram"
       ]
     },
     {
       "scheme": "jingdong",
       "package_name": [
-        "com.qzone"
+        "添加Fackbook,Tumblr,Vimeo,Telegram"
       ]
     },
     {
       "scheme": "tmall",
       "package_name": [
-        "com.qzone"
+        "com.tmall.wireless"
       ]
     },
     {
       "scheme": "itmall",
       "package_name": [
-        "com.qzone"
+        "com.tmall.wireless"
       ]
     },
     {
       "scheme": "douban",
       "package_name": [
-        "com.qzone"
+        "com.douban.frodo"
       ]
     },
     {
       "scheme": "tbmaintab",
       "package_name": [
-        "com.qzone"
+        "com.baidu.tieba"
       ]
     },
     {
       "scheme": "invoke_frs",
       "package_name": [
-        "com.qzone"
+        "com.baidu.tieba"
       ]
     },
     {
       "scheme": "tbfrs",
       "package_name": [
-        "com.qzone"
+        "com.baidu.tieba"
       ]
     },
     {
       "scheme": "tbphotolive",
       "package_name": [
-        "com.qzone"
+        "com.baidu.tieba"
       ]
     },
     {
       "scheme": "tbpb",
       "package_name": [
-        "com.qzone"
+        "com.baidu.tieba"
       ]
     },
     {
       "scheme": "tieba_sign",
       "package_name": [
-        "com.qzone"
+        "com.baidu.tieba"
       ]
     },
     {
       "scheme": "baiduyun",
       "package_name": [
-        "com.qzone"
+        "com.baidu.netdisk"
       ]
     },
     {
@@ -316,7 +316,8 @@
     {
       "scheme": "geo",
       "package_name": [
-        "com.qzone"
+        "com.google.earth",
+        "com.google.android.apps.maps"
       ]
     },
     {
