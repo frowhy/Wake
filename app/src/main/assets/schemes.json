@@ -316,13 +316,43 @@
     {
       "scheme": "geo",
       "package_name": [
-        "com.qzone"
+        "com.google.earth", "com.google.android.apps.maps"
       ]
     },
     {
       "scheme": "googletranslate",
       "package_name": [
         "com.google.android.apps.translate"
+      ]
+    },
+    {
+      "scheme": "version",
+      "package_name": [
+        "com.google.android.play.games"
+      ]
+    },
+    {
+      "scheme": "currents",
+      "package_name": [
+        "com.google.android.apps.magazines"
+      ]
+    },
+    {
+      "scheme": "magazines",
+      "package_name": [
+        "com.google.android.apps.magazines"
+      ]
+    },
+    {
+      "scheme": "newsstand",
+      "package_name": [
+        "com.google.android.apps.magazines"
+      ]
+    },
+    {
+      "scheme": "google_newsstand_sponsored",
+      "package_name": [
+        "com.google.android.apps.magazines"
       ]
     }
   ]
