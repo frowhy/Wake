@@ -324,6 +324,126 @@
       "package_name": [
         "com.google.android.apps.translate"
       ]
+    },
+    {
+      "scheme": "version",
+      "package_name": [
+        "com.google.android.play.games"
+      ]
+    },
+    {
+      "scheme": "currents",
+      "package_name": [
+        "com.google.android.apps.magazines"
+      ]
+    },
+    {
+      "scheme": "magazines",
+      "package_name": [
+        "com.google.android.apps.magazines"
+      ]
+    },
+    {
+      "scheme": "newsstand",
+      "package_name": [
+        "com.google.android.apps.magazines"
+      ]
+    },
+    {
+      "scheme": "google_newsstand_sponsored",
+      "package_name": [
+        "com.google.android.apps.magazines"
+      ]
+    },
+    {
+      "scheme": "facebook",
+      "package_name": [
+        "com.facebook.katana"
+      ]
+    },
+    {
+      "scheme": "fb",
+      "package_name": [
+        "com.facebook.katana"
+      ]
+    },
+    {
+      "scheme": "fblogin",
+      "package_name": [
+        "com.facebook.katana"
+      ]
+    },
+    {
+      "scheme": "fbinternal",
+      "package_name": [
+        "com.facebook.katana"
+      ]
+    },
+    {
+      "scheme": "fb-register",
+      "package_name": [
+        "com.facebook.katana"
+      ]
+    },
+    {
+      "scheme": "fblite",
+      "package_name": [
+        "com.facebook.lite"
+      ]
+    },
+    {
+      "scheme": "dialtone",
+      "package_name": [
+        "com.facebook.lite"
+      ]
+    },
+    {
+      "scheme": "fb-messenger",
+      "package_name": [
+        "com.facebook.orca"
+      ]
+    },
+    {
+      "scheme": "fb-messenger-secure",
+      "package_name": [
+        "com.facebook.orca"
+      ]
+    },
+    {
+      "scheme": "fb-messenger-sametaskr",
+      "package_name": [
+        "com.facebook.orca"
+      ]
+    },
+    {
+      "scheme": "tumblr",
+      "package_name": [
+        "com.tumblr"
+      ]
+    },
+    {
+      "scheme": "tumblr-auth",
+      "package_name": [
+        "com.tumblr"
+      ]
+    },
+    {
+      "scheme": "tg",
+      "package_name": [
+        "org.telegram.messenger"
+      ]
+    },
+    {
+      "scheme": "tgb",
+      "package_name": [
+        "org.telegram.messenger"
+      ]
+    },
+    {
+      "scheme": "vimeo",
+      "package_name": [
+        "com.vimeo.android.videoapp"
+      ]
     }
   ]
 }

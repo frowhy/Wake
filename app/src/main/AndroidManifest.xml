@@ -100,6 +100,42 @@
                 <!--GoogleTranslate-->
                 <data android:scheme="googletranslate" />
 
+                <!--GoogleGame-->
+                <data android:scheme="version" />
+
+                <!--GoogleNewsstand-->
+                <data android:scheme="currents" />
+                <data android:scheme="magazines" />
+                <data android:scheme="newsstand" />
+                <data android:scheme="google_newsstand_sponsored" />
+
+                <!--Facebook-->
+                <data android:scheme="facebook" />
+                <data android:scheme="fb" />
+                <data android:scheme="fblogin" />
+                <data android:scheme="fbinternal" />
+                <data android:scheme="fb-register" />
+
+                <!--FacebookLite-->
+                <data android:scheme="fblite" />
+                <data android:scheme="dialtone" />
+
+                <!--FacebookMessenger-->
+                <data android:scheme="fb-messenger" />
+                <data android:scheme="fb-messenger-secure" />
+                <data android:scheme="fb-messenger-sametask" />
+
+                <!--Tumblr-->
+                <data android:scheme="tumblr" />
+                <data android:scheme="tumblr-auth" />
+
+                <!--Telegram-->
+                <data android:scheme="tg" />
+                <data android:scheme="tgb" />
+
+                <!--Telegram-->
+                <data android:scheme="vimeo" />
+
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
