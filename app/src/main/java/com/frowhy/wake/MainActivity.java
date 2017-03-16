@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
 
         PackageManager packageManager = getPackageManager();
 
-        if (mSp.getInt("version_code", 0) < getVersionCode(packageManager, getPackageName()) || !mSp.getBoolean("hasRoot", false)) {
+        if (mSp.getInt("version_code", 0) == 0 || mSp.getInt("version_code", 0) == getVersionCode(packageManager, getPackageName()) || !mSp.getBoolean("hasRoot", false)) {
             Toast.makeText(this, "更新版本可能要重新授权,首次授权可能会慢一些", Toast.LENGTH_SHORT).show();
         }
 

@@ -19,7 +19,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 
-import com.frowhy.wake.model.Schema;
+import com.frowhy.wake.model.Scheme;
 import com.google.gson.Gson;
 
 import java.io.DataOutputStream;
@@ -77,10 +77,10 @@ public class WakeActivity extends Activity {
         packageManager = getPackageManager();
 
         initSp();
-        initSchema();
+        initScheme();
     }
 
-    private void initSchema() {
+    private void initScheme() {
         if (!mSp.getBoolean("Enabled", true)) {
             finish();
         } else {
@@ -128,15 +128,15 @@ public class WakeActivity extends Activity {
 
         if (versionCode == 0 || versionCode < currentVersionCode) {
             String jsonStr = getLocalJson();
-            Schema schemas = gson.fromJson(String.valueOf(jsonStr), Schema.class);
-            List<Schema.SchemasBean> schemasList = schemas.getSchemas();
-            for (Schema.SchemasBean schema : schemasList) {
+            Scheme schemes = gson.fromJson(String.valueOf(jsonStr), Scheme.class);
+            List<Scheme.SchemesBean> schemesList = schemes.getSchemes();
+            for (Scheme.SchemesBean scheme : schemesList) {
                 Set<String> set = new HashSet<>();
-                String schemaName = schema.getSchema();
+                String schemeName = scheme.getScheme();
                 List<String> packageNameList;
-                packageNameList = schema.getPackage_name();
+                packageNameList = scheme.getPackage_name();
                 set.addAll(packageNameList);
-                mSpEditor.putStringSet(schemaName, set);
+                mSpEditor.putStringSet(schemeName, set);
             }
             mSpEditor.putInt("version_code", currentVersionCode);
             mSpEditor.commit();
@@ -146,7 +146,7 @@ public class WakeActivity extends Activity {
     private String getLocalJson() {
         String resultString = "";
         try {
-            InputStream inputStream = getResources().getAssets().open("schemas.json");
+            InputStream inputStream = getResources().getAssets().open("schemes.json");
             byte[] buffer = new byte[inputStream.available()];
             //noinspection ResultOfMethodCallIgnored
             inputStream.read(buffer);
@@ -157,28 +157,33 @@ public class WakeActivity extends Activity {
     }
 
     private void handle(final Uri uri) {
-        String mSchema = uri.getScheme();
+        String mScheme = uri.getScheme();
 
-        if (mSchema.equals("wake")) {
+        if (mScheme.equals("wake")) {
             final String mPackageName = uri.getHost();
             PackageInfo packageInfo;
             try {
                 packageInfo = packageManager.getPackageInfo(mPackageName, 0);
+                boolean needRoot = false;
                 if (!packageInfo.applicationInfo.enabled) {
                     checkRoot = 0 == execRootCmdSilent("pm enable " + mPackageName);
+                    needRoot = true;
                 }
 
-                Toast.makeText(this, "已唤醒[" + packageInfo.applicationInfo.loadLabel(packageManager).toString() + "]", Toast.LENGTH_SHORT).show();
-
-                startActivityWithUri(uri);
+                if (needRoot && !checkRoot) {
+                    Toast.makeText(this, "唤醒失败", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "已唤醒[" + packageInfo.applicationInfo.loadLabel(packageManager).toString() + "]", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(packageManager.getLaunchIntentForPackage(packageInfo.packageName)));
+                }
             } catch (PackageManager.NameNotFoundException ignored) {
                 Toast.makeText(this, "唤醒失败", Toast.LENGTH_SHORT).show();
             }
         } else {
 
-            if (mSp.contains(mSchema)) {
+            if (mSp.contains(mScheme)) {
 
-                Set<String> mPackageNames = mSp.getStringSet(mSchema, new HashSet<String>());
+                Set<String> mPackageNames = mSp.getStringSet(mScheme, new HashSet<String>());
 
                 if (!mPackageNames.isEmpty()) {
                     int count = 0;
@@ -228,12 +233,12 @@ public class WakeActivity extends Activity {
                         startActivityWithUri(uri);
                     }
                 } else {
-                    Toast.makeText(this, "未记录该APP,请反馈Schema以及PackageName", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "未记录该APP,请反馈Scheme以及PackageName", Toast.LENGTH_SHORT).show();
 
                     startActivityWithUri(uri);
                 }
             } else {
-                Toast.makeText(this, "未记录该APP,请反馈Schema以及PackageName", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "未记录该APP,请反馈Scheme以及PackageName", Toast.LENGTH_SHORT).show();
 
                 startActivityWithUri(uri);
             }

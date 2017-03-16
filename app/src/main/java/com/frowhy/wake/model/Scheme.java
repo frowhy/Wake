@@ -7,32 +7,33 @@ import java.util.List;
  * Created by frowhy on 2017/3/14.
  */
 
-public class Schema {
-    private List<SchemasBean> schemas;
+public class Scheme {
 
-    public List<SchemasBean> getSchemas() {
-        return schemas;
+    private List<SchemesBean> schemes;
+
+    public List<SchemesBean> getSchemes() {
+        return schemes;
     }
 
-    public void setSchemas(List<SchemasBean> schemas) {
-        this.schemas = schemas;
+    public void setSchemes(List<SchemesBean> schemes) {
+        this.schemes = schemes;
     }
 
-    public static class SchemasBean {
+    public static class SchemesBean {
         /**
-         * schema : mqq
+         * scheme : mqq
          * package_name : ["com.qzone","com.tencent.mobileqq","com.tencent.tim"]
          */
 
-        private String schema;
+        private String scheme;
         private List<String> package_name;
 
-        public String getSchema() {
-            return schema;
+        public String getScheme() {
+            return scheme;
         }
 
-        public void setSchema(String schema) {
-            this.schema = schema;
+        public void setScheme(String scheme) {
+            this.scheme = scheme;
         }
 
         public List<String> getPackage_name() {

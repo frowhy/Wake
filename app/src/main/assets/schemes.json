@@ -1,7 +1,7 @@
 {
-  "schemas": [
+  "schemes": [
     {
-      "schema": "mqq",
+      "scheme": "mqq",
       "package_name": [
         "com.qzone",
         "com.tencent.mobileqq",
@@ -9,56 +9,56 @@
       ]
     },
     {
-      "schema": "mqqwpa",
+      "scheme": "mqqwpa",
       "package_name": [
         "com.tencent.mobileqq",
         "com.tencent.tim"
       ]
     },
     {
-      "schema": "taobao",
+      "scheme": "taobao",
       "package_name": [
         "com.taobao.taobao"
       ]
     },
     {
-      "schema": "weixin",
+      "scheme": "weixin",
       "package_name": [
         "com.tencent.mm"
       ]
     },
     {
-      "schema": "doubanradio",
+      "scheme": "doubanradio",
       "package_name": [
         "com.douban.radio"
       ]
     },
     {
-      "schema": "zhihu",
+      "scheme": "zhihu",
       "package_name": [
         "com.zhihu.android"
       ]
     },
     {
-      "schema": "alipay",
+      "scheme": "alipay",
       "package_name": [
         "com.eg.android.AlipayGphone"
       ]
     },
     {
-      "schema": "youku",
+      "scheme": "youku",
       "package_name": [
         "com.youku.phone"
       ]
     },
     {
-      "schema": "openapp.jdmoble",
+      "scheme": "openapp.jdmoble",
       "package_name": [
         "com.jingdong.app.mall"
       ]
     },
     {
-      "schema": "bilibili",
+      "scheme": "bilibili",
       "package_name": [
         "tv.danmaku.bili",
         "com.bilibili.app.blue",
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "schema": "acg.tv",
+      "scheme": "acg.tv",
       "package_name": [
         "tv.danmaku.bili",
         "com.bilibili.app.blue",
@@ -74,121 +74,121 @@
       ]
     },
     {
-      "schema": "mqzone",
+      "scheme": "mqzone",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "mqzonev2",
+      "scheme": "mqzonev2",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "mqzonev3",
+      "scheme": "mqzonev3",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "mqzonex",
+      "scheme": "mqzonex",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "mqzonewx",
+      "scheme": "mqzonewx",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "mqzoneqq",
+      "scheme": "mqzoneqq",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "qqpassport",
+      "scheme": "qqpassport",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "openApp.jdMobile",
+      "scheme": "openApp.jdMobile",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "openapp.jdmobile",
+      "scheme": "openapp.jdmobile",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "jingdong",
+      "scheme": "jingdong",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "tmall",
+      "scheme": "tmall",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "itmall",
+      "scheme": "itmall",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "douban",
+      "scheme": "douban",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "tbmaintab",
+      "scheme": "tbmaintab",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "invoke_frs",
+      "scheme": "invoke_frs",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "tbfrs",
+      "scheme": "tbfrs",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "tbphotolive",
+      "scheme": "tbphotolive",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "tbpb",
+      "scheme": "tbpb",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "tieba_sign",
+      "scheme": "tieba_sign",
       "package_name": [
         "com.qzone"
       ]
     },
     {
-      "schema": "baiduyun",
+      "scheme": "baiduyun",
       "package_name": [
         "com.qzone"
       ]
