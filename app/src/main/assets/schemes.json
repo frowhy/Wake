@@ -109,19 +109,19 @@
     {
       "scheme": "openApp.jdMobile",
       "package_name": [
-        "添加Fackbook,Tumblr,Vimeo,Telegram"
+        "com.jingdong.app.mall"
       ]
     },
     {
       "scheme": "openapp.jdmobile",
       "package_name": [
-        "添加Fackbook,Tumblr,Vimeo,Telegram"
+        "com.jingdong.app.mall"
       ]
     },
     {
       "scheme": "jingdong",
       "package_name": [
-        "添加Fackbook,Tumblr,Vimeo,Telegram"
+        "com.jingdong.app.mall"
       ]
     },
     {
@@ -181,7 +181,7 @@
     {
       "scheme": "baiduyun",
       "package_name": [
-        "com.baidu.netdisk"
+        "com.baidu.netdisk", "com.downloading.main.baiduyundownload"
       ]
     },
     {
@@ -438,6 +438,71 @@
       ]
     },
     {
+<<<<<<< HEAD
+      "scheme": "mega",
+      "package_name": [
+        "mega.privacy.android.app"
+      ]
+    },
+    {
+      "scheme": "u17comic",
+      "package_name": [
+        "com.u17.comic.phone"
+      ]
+    },
+    {
+      "scheme": "whoscallio",
+      "package_name": [
+        "gogolook.callgogolook2"
+      ]
+    },
+    {
+      "scheme": "whoscall",
+      "package_name": [
+        "gogolook.callgogolook2"
+      ]
+    },
+    {
+      "scheme": "qdreader",
+      "package_name": [
+        "com.qidian.QDReader", "com.qidian.QDReader.g", "com.qidian.QDReaderMM"
+      ]
+    },
+    {
+      "scheme": "QDreader",
+      "package_name": [
+        "com.qidian.QDReader", "com.qidian.QDReader.g", "com.qidian.QDReaderMM"
+      ]
+    },
+    {
+      "scheme": "tencentcom.qidian.QDReader",
+      "package_name": [
+        "com.qidian.QDReader", "com.qidian.QDReader.g"
+      ]
+    },
+    {
+      "scheme": "qwalletcom.qidian.QDReader",
+      "package_name": [
+        "com.qidian.QDReader", "com.qidian.QDReader.g"
+      ]
+    },
+    {
+      "scheme": "orpheus",
+      "package_name": [
+        "com.netease.cloudmusic"
+      ]
+    },
+    {
+      "scheme": "orpheus-cortana",
+      "package_name": [
+        "com.netease.cloudmusic"
+      ]
+    },
+    {
+      "scheme": "hbooker",
+      "package_name": [
+        "com.kuangxiang.novel"
+=======
       "scheme": "mqqopensdkapi",
       "package_name": [
         "com.tencent.mobileqq",
@@ -547,6 +612,7 @@
       "package_name": [
         "com.tencent.mobileqq",
         "com.tencent.tim"
+>>>>>>> master
       ]
     }
   ]

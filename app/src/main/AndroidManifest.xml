@@ -135,6 +135,31 @@
                 <!--Telegram-->
                 <data android:scheme="vimeo" />
 
+<<<<<<< HEAD
+                <!--MEGA-->
+                <data android:scheme="mega" />
+
+                <!--有妖气-->
+                <data android:scheme="u17comic" />
+
+                <!--Whoscall-->
+                <data android:scheme="whoscallio" />
+                <data android:scheme="whoscall" />
+
+                <!--起点-->
+                <data android:scheme="qdreader" />
+                <data android:scheme="QDreader" />
+                <data android:scheme="tencentcom.qidian.QDReader" />
+                <data android:scheme="qwalletcom.qidian.QDReader" />
+
+                <!--网易云音乐-->
+                <data android:scheme="orpheus" />
+                <data android:scheme="orpheus-cortana" />
+
+                <!--欢乐书客-->
+                <data android:scheme="hbooker" />
+                
+=======
                 <!--QQ-->
                 <data android:scheme="mqq" />
                 <data android:scheme="mqqapi" />
@@ -156,6 +181,7 @@
                 <data android:scheme="mqqconferenceflyticket" />
                 <data android:scheme="mqqwallet" />
 
+>>>>>>> master
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
