@@ -11,7 +11,6 @@
         <activity android:name=".WakeActivity">
             <intent-filter>
                 <data android:scheme="wake" />
-                <data android:scheme="mqqwpa" />
                 <data android:scheme="taobao" />
                 <data android:scheme="weixin" />
                 <data android:scheme="doubanradio" />
@@ -136,6 +135,7 @@
                 <!--Telegram-->
                 <data android:scheme="vimeo" />
 
+<<<<<<< HEAD
                 <!--MEGA-->
                 <data android:scheme="mega" />
 
@@ -159,6 +159,29 @@
                 <!--欢乐书客-->
                 <data android:scheme="hbooker" />
                 
+=======
+                <!--QQ-->
+                <data android:scheme="mqq" />
+                <data android:scheme="mqqapi" />
+                <data android:scheme="mqqmdpass" />
+                <data android:scheme="mqqwpa" />
+                <data android:scheme="mqqopensdkapi" />
+                <data android:scheme="mqqflyticket" />
+                <data android:scheme="wtloginmqq" />
+                <data android:scheme="imto" />
+                <data android:scheme="mqqtribe" />
+                <data android:scheme="mqqverifycode" />
+                <data android:scheme="mqqdevlock" />
+                <data android:scheme="qapp" />
+                <data android:scheme="qqwifi" />
+                <data android:scheme="apollo" />
+                <data android:scheme="mqqconnect" />
+                <data android:scheme="mqqzonev2" />
+                <data android:scheme="mqqzonev3" />
+                <data android:scheme="mqqconferenceflyticket" />
+                <data android:scheme="mqqwallet" />
+
+>>>>>>> master
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />

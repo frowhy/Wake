@@ -438,6 +438,7 @@
       ]
     },
     {
+<<<<<<< HEAD
       "scheme": "mega",
       "package_name": [
         "mega.privacy.android.app"
@@ -501,6 +502,117 @@
       "scheme": "hbooker",
       "package_name": [
         "com.kuangxiang.novel"
+=======
+      "scheme": "mqqopensdkapi",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "mqqapi",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "mqqflyticket",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "wtloginmqq",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "imto",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "mqqtribe",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "mqqverifycode",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "mqqdevlock",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "qapp",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "qqwifi",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "apollo",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "mqqconnect",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "mqqzonev2",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "mqqzonev3",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "mqqconferenceflyticket",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+      ]
+    },
+    {
+      "scheme": "mqqwallet",
+      "package_name": [
+        "com.tencent.mobileqq",
+        "com.tencent.tim"
+>>>>>>> master
       ]
     }
   ]
