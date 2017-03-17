@@ -135,7 +135,6 @@
                 <!--Telegram-->
                 <data android:scheme="vimeo" />
 
-<<<<<<< HEAD
                 <!--MEGA-->
                 <data android:scheme="mega" />
 
@@ -158,8 +157,7 @@
 
                 <!--欢乐书客-->
                 <data android:scheme="hbooker" />
-                
-=======
+
                 <!--QQ-->
                 <data android:scheme="mqq" />
                 <data android:scheme="mqqapi" />
@@ -181,7 +179,6 @@
                 <data android:scheme="mqqconferenceflyticket" />
                 <data android:scheme="mqqwallet" />
 
->>>>>>> master
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />

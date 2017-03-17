@@ -181,7 +181,8 @@
     {
       "scheme": "baiduyun",
       "package_name": [
-        "com.baidu.netdisk", "com.downloading.main.baiduyundownload"
+        "com.baidu.netdisk",
+        "com.downloading.main.baiduyundownload"
       ]
     },
     {
@@ -438,12 +439,23 @@
       ]
     },
     {
-<<<<<<< HEAD
-      "scheme": "mega",
-      "package_name": [
-        "mega.privacy.android.app"
-      ]
-    },
+      <
+      <
+      <
+      <
+      <
+      <
+      <
+    HEAD
+    "scheme"
+    :
+    "mega",
+    "package_name"
+    :
+    [
+    "mega.privacy.android.app"
+    ]
+  },
     {
       "scheme": "u17comic",
       "package_name": [
@@ -465,25 +477,31 @@
     {
       "scheme": "qdreader",
       "package_name": [
-        "com.qidian.QDReader", "com.qidian.QDReader.g", "com.qidian.QDReaderMM"
+        "com.qidian.QDReader",
+        "com.qidian.QDReader.g",
+        "com.qidian.QDReaderMM"
       ]
     },
     {
       "scheme": "QDreader",
       "package_name": [
-        "com.qidian.QDReader", "com.qidian.QDReader.g", "com.qidian.QDReaderMM"
+        "com.qidian.QDReader",
+        "com.qidian.QDReader.g",
+        "com.qidian.QDReaderMM"
       ]
     },
     {
       "scheme": "tencentcom.qidian.QDReader",
       "package_name": [
-        "com.qidian.QDReader", "com.qidian.QDReader.g"
+        "com.qidian.QDReader",
+        "com.qidian.QDReader.g"
       ]
     },
     {
       "scheme": "qwalletcom.qidian.QDReader",
       "package_name": [
-        "com.qidian.QDReader", "com.qidian.QDReader.g"
+        "com.qidian.QDReader",
+        "com.qidian.QDReader.g"
       ]
     },
     {
@@ -502,7 +520,9 @@
       "scheme": "hbooker",
       "package_name": [
         "com.kuangxiang.novel"
-=======
+      ]
+    },
+    {
       "scheme": "mqqopensdkapi",
       "package_name": [
         "com.tencent.mobileqq",
@@ -612,7 +632,6 @@
       "package_name": [
         "com.tencent.mobileqq",
         "com.tencent.tim"
->>>>>>> master
       ]
     }
   ]
