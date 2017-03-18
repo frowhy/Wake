@@ -439,21 +439,9 @@
       ]
     },
     {
-      <
-      <
-      <
-      <
-      <
-      <
-      <
-    HEAD
-    "scheme"
-    :
-    "mega",
-    "package_name"
-    :
-    [
-    "mega.privacy.android.app"
+      "scheme": "mega",
+      "package_name": [
+        "mega.privacy.android.app"
     ]
   },
     {
