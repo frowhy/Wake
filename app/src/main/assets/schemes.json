@@ -146,36 +146,42 @@
       "scheme": "tbmaintab",
       "package_name": [
         "com.baidu.tieba"
+        "com.baidu.xxtieba"
       ]
     },
     {
       "scheme": "invoke_frs",
       "package_name": [
         "com.baidu.tieba"
+        "com.baidu.xxtieba"
       ]
     },
     {
       "scheme": "tbfrs",
       "package_name": [
         "com.baidu.tieba"
+        "com.baidu.xxtieba"
       ]
     },
     {
       "scheme": "tbphotolive",
       "package_name": [
         "com.baidu.tieba"
+        "com.baidu.xxtieba"
       ]
     },
     {
       "scheme": "tbpb",
       "package_name": [
         "com.baidu.tieba"
+        "com.baidu.xxtieba"
       ]
     },
     {
       "scheme": "tieba_sign",
       "package_name": [
         "com.baidu.tieba"
+        "com.baidu.xxtieba"
       ]
     },
     {
